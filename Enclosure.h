@@ -24,8 +24,8 @@ public:
     void addAnimal(Animal* a) {
         if (currentCount < capacity) {
             animals[currentCount++] = a;
-        } else 
-            cout << "Enclosure is full! can add other animals." << endl;
+     
+          
         }
     }
 
