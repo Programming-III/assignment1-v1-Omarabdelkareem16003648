@@ -3,7 +3,39 @@
 
 #include "Animal.h"
 
-//define enclosure class here 
+class Enclosure {
+private:
+    Animal** animals;
+    int capacity;
+    int currentCount;
+
+public:
+    Enclosure(int cap)
+        : capacity(cap), currentCount(0) {
+        animals = new Animal*[capacity];
+    }
+
+    ~Enclosure() {
+        for (int i = 0; i < currentCount; i++)
+            delete animals[i];
+        delete[] animals;
+    }
+
+    void addAnimal(Animal* a) {
+        if (currentCount < capacity) {
+            animals[currentCount++] = a;
+        } else 
+            cout << "Enclosure is full! can add other animals." << endl;
+        }
+    }
+
+    void displayAnimals()  {
+        
+       
+        }
+    }
+};
+ 
 
 
 
